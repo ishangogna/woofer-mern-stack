@@ -16,13 +16,15 @@ const WoofEntry = () => {
         }).then(response => response.json())
         .then(data => console.log(data))
         .catch(err => console.log('error : ' + err));
-    }
+        setName('');
+        setContent('');
+    }   
     return ( 
-        <form>
+        <form className = "woof-entry">
             <label htmlFor="name">Name</label>
-            <input type="text" name = "name" onChange = {(e)=>setName(e.target.value)} required/>
+            <input value = {name} type="text" name = "name" onChange = {(e)=>setName(e.target.value)} required/>
             <label htmlFor="content">Woof</label>
-            <textarea type="text" name = "content" onChange = {(e) => setContent(e.target.value)}/>
+            <textarea value = {content}  rows={5} type="text" name = "content" onChange = {(e) => setContent(e.target.value)}/>
             <input type="submit" value = 'Add a woof!🐕' onClick = {addWoof}/>
         </form>
      );

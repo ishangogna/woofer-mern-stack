@@ -5,7 +5,7 @@ import GetWoofs from './components/GetWoofs';
 function App() {
   return (
     <div className="App">
-      <div className = "app-title">Woof! Twitter for dogs 🐶</div>
+      <h1 className = "app-title"><span className = 'woof-title'>Woof!</span>Twitter for dogs 🐶</h1>
       <WoofEntry />
       <GetWoofs />
     </div>
