@@ -1,9 +1,14 @@
 import React from 'react';
+import WoofEntry from './components/WoofEntry';
+import InfoContextProvider from './context/infoContext';
 
 function App() {
   return (
     <div className="App">
-      Hello world!! 🌎
+      <InfoContextProvider>
+          <div className = "app-title">Woof! Twitter for dogs 🐶</div>
+          <WoofEntry />
+      </InfoContextProvider>
     </div>
   );
 }
