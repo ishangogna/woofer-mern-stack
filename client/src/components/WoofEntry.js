@@ -1,9 +1,6 @@
-import React, { useState, useContext } from 'react';
-import { InfoContext } from '../context/infoContext';
+import React, { useState } from 'react';
 
 const WoofEntry = () => {
-    const { woofs, dispatch } = useContext(InfoContext);
-
     return ( 
         <form>
             <label htmlFor="name">Name</label>
