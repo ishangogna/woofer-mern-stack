@@ -4,14 +4,12 @@ const Woof = require('../models/woof');
 
 router.get('/',(req,res,next)=>{
     Woof.find({})
-        .then(res => res.json())
-        .then(data => res.json(data))
-        .catch(err => res.json({message : err.message}));
+        .then(woofs => res.send(woofs));
 })
 
 router.post('/',(req,res,next)=>{
-    res.status(200);
-    res.json({ type : 'POST' })
+    const woof = new Woof(req.body);
+    woof.save().then(data => res.send(data));
 })
 
 module.exports = router;
