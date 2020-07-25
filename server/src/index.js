@@ -4,6 +4,8 @@ const cors = require('cors');
 const routes = require('./routes/api');
 require('dotenv').config();
 
+mongoose.connect(process.env.DATABASE_URL);
+
 const app = express();
 
 app.use(cors());
