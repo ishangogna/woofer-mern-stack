@@ -11,8 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 .App{
   padding : 0 5px;
+  margin: 0,
 }
 
 .app-title {
@@ -43,10 +45,11 @@ input[type = submit]{
 .woofs {
   max-width: 900px;
   margin : 0 auto;
-  max-height: 20rem;
   overflow : scroll;
   margin-top : 1rem;
-  
+  display : flex;
+  flex-direction: column;
+  flex : 1;
 }
 ::-webkit-scrollbar {
   width: 0px;  

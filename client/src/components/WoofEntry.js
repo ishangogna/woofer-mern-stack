@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { InfoContext } from '../context/InfoContext';
 
 const WoofEntry = () => {
+    const { getWoofs, dispatch } = useContext(InfoContext);
     const [name, setName] = useState('');
     const [content, setContent] = useState('');
     const addWoof = (e) => {
         e.preventDefault();
         const body = name && content ? {name,content} : null
-        const url = "http://localhost:2000/api/woofs";
+        const url = window.location === 'localhost' ? "http://localhost:2000/api/woofs" : "https://ishan-woofer.vercel.app/api/woofs"; 
         fetch(url, {
             method : "POST",
             headers : {
@@ -18,6 +20,9 @@ const WoofEntry = () => {
         .catch(err => console.log('error : ' + err));
         setName('');
         setContent('');
+        //dispatch an action to the InfoReducer to negate the getWoofs state in Context
+        dispatch({type:'GET_WOOFS'});
+        
     }   
     return ( 
         <form className = "woof-entry">

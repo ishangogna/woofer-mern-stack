@@ -1,0 +1,23 @@
+{
+    "version": 2,
+    "name": "woofer",
+    "builds": [
+      {
+        "src": "src/index.js",
+        "use": "@now/node-server"
+      }
+    ],
+    "alias": [
+      "ishan-woofer"
+    ],
+    "routes": [
+      {
+        "src": "/.*",
+        "dest": "src/index.js"
+      }
+    ],
+    "env" : {
+        "DB_URL" : "@db_url",
+        "PORT" : "2000" 
+    }
+  }
