@@ -4,7 +4,7 @@ const cors = require('cors');
 const routes = require('./routes/api');
 require('dotenv').config();
 
-mongoose.connect(process.env.DATABASE_URL);
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
 
 const app = express();
 
